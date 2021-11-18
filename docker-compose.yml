@@ -1,0 +1,15 @@
+version: '3.7'
+
+services: 
+  custom-scroll:
+    container_name: custom-scroll
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3035:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
